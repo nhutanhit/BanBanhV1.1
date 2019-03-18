@@ -1,0 +1,65 @@
+﻿
+<div class="product_home">
+    <div class="row">
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+            <div class="search_box">
+                <div class="search_wrapper">
+                    <input type="text" name="search" ng-model="search" class="index_input_search" id="txtsearch" onblur="if(this.value==&#39;&#39;)this.value=&#39;Nhập từ khóa tìm kiếm...&#39;" onfocus="if(this.value==&#39;Nhập từ khóa tìm kiếm...&#39;)this.value=&#39;&#39;" value="Nhập từ khóa tìm kiếm...">
+                    <!--  <button class="btn_search_submit btn " type="button" id="btnsearch" ng-click="TimKiem(search)"><span>Tìm ngay</span></button>-->
+                </div>
+            </div>
+        </div>
+    </div> <br />
+    <!-- Start:  QC -->
+    <!--<div class="product_home_image">
+        <a href=" ">
+            <img src="../../../../images/silder/slider_3.jpg" style="width: 100%" />
+            <div class="figcaption"></div>
+        </a>
+    </div>-->
+    <!-- End:  QC -->
+    <div class="clearfix">
+    </div>
+    <div class="clearfix">
+        <div class="product-list" ng-repeat="index in listProduct | filter : search ">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-wrapper zoomIn wow"
+                 style="visibility: visible; animation-name: zoomIn;">
+                <div class="product-block product-resize fixheight" style="height: 299px;" ng-click="usershowDetailProduct(index.MaSanPham)">
+                    <div class="product-image image-resize" style="height: 212px;">
+                        <div class="sold-out">Hot</div>
+                        <a href=" ">
+                            <!--<img src="../../../../images/product/san_pham_1.png" />-->
+                            <img ng-src="{{index.HinhAnh}}" />
+                        </a>
+                        <div class="product-actions hidden-xs">
+                            <div class="btn-add-to-cart">
+                                <a href="javascript:void(0);"><i class="fa fa-shopping-bag" style="font-family: 'FontAwesome'!important;" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="btn_quickview">
+                                <a class="quickview" href=" "><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info text-center m-t-xxs-20">
+                        <h3 class="pro-name">
+                            <a href="">{{index.TenSanPham}}</a>
+                        </h3>
+                        <div class="pro-prices">
+                            <span class="pro-price">{{index.GiaBan | currency:""}}&nbsp;₫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <dir-pagination-controls boundary-links="true"
+                                     direction-links="true">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+    <div class="show_more">
+        Mời bạn <a href=" ">Xem thêm các sản phẩm Tôm</a> khác
+    </div>
+</div>
