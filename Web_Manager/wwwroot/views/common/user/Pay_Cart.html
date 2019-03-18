@@ -1,0 +1,117 @@
+﻿<div class="row">
+    <!--<div class="col-sm-12">
+        <div class="payment-step">
+            <h4>Time Line</h4>
+        </div>
+    </div> <br /><br />-->
+    <div class="col-sm-12">
+        <div class="col-md-4 col-sm-12 col-xs-12 payment-step step2">
+            <h4>1. ĐỊA CHỈ THANH TOÁN VÀ GIAO HÀNG</h4>
+            <div class="step-preview clearfix">
+                <h2>Thông tin thanh toán</h2>
+                <div class="form-group">
+                    <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" ng-model="UserInfo.HoTenKH" type="text" placeholder="Họ & Tên" required disabled />
+                </div>
+                <div class="form-group">
+                    <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" ng-model="UserInfo.DienThoaiKH" type="text" placeholder="Số điện thoại" required disabled />
+                </div>
+                <div class="form-group">
+                    <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" ng-model="UserInfo.Email" type="email" placeholder="Email" required disabled />
+                </div>
+                <textarea class="form-control ng-pristine ng-valid ng-touched" rows="4" placeholder="Địa chỉ" ng-model="UserInfo.DiaChiGiaoHang" disabled style="margin: 0px 0.0347222px 0px 0px; width: 367px; height: 62px;"></textarea> <br />
+
+                <h2>Thông tin giao hàng</h2>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="ng-valid ng-dirty ng-valid-parse ng-touched" ng-model="UserInfoReq.IsOtherAddress"    />  Giao hàng địa chỉ khác
+                    </label>
+                </div>
+                <div class="form-block" ng-show="UserInfoReq.IsOtherAddress" >
+                    <div class="form-group"> 
+                        <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" type="text"
+                               ng-model="UserInfoReq.HoTenKH2"
+                               placeholder="Họ & Tên" required  style=" float: left;margin-bottom: 15px;"  />    <label style="color: red; float: right">(*)</label>
+                    </div> 
+                    <div class="form-group" > 
+                        <input class="form-control ng-pristi ne ng-invalid ng-invalid-required ng-touched" type="text"
+                               ng-model="UserInfoReq.DienThoaiKH2"
+                               placeholder="Số điện thoại" required  style=" float: left;margin-bottom: 15px;"  /> <label style="color: red; float: right">(*)</label>
+                    </div>
+                    <textarea class="form-control ng-pristine ng-valid ng-touched" rows="4" 
+                              ng-model="UserInfoReq.DiaChiGiaoHang2"
+                              placeholder="Địa chỉ" style="margin: 0px 0.0347222px 0px 0px; width: 367px; height: 62px; float: left "></textarea> <br /> <label style="color: red; float: right">(*)</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 payment-step step2">
+            <h4>2.THANH TOÁN VÀ VẬN CHUYỂN</h4>
+            <div class="step-preview clearfix">
+                <h2>Vận chuyển</h2>
+                <div>
+                    <label style="color: #1294a2"> Giao hàng tận nơi, thanh toán liền tay  </label>
+                </div>
+                <div class="form-group">
+                    <img src="../../../../images/icon/van_chuyen.png" style="padding: 10px 85px " />
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 payment-step step2">
+            <h4> 3. THÔNG TIN ĐƠN HÀNG</h4>
+            <div class="step-preview clearfix">
+                <div class="cart-items">
+                    <div class="cart-item clearfix ng-scope" ng-repeat="index in myCartProduct" style="border-bottom: 1px solid #eaeaea">
+                        <!--1 sp-->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3">
+                                    <span class="image pull-left" style="margin-right:10px;   float: left ">
+                                        <img ng-src="{{index.HinhAnh}}" alt="Alternate Textng" style="width: 104px" /> 
+                                    </span>
+                                </div>
+                                <div class="col-sm-5">
+                                    <span class="product-name" style="float: left">{{index.TenSanPham}}</span>
+                                </div>
+                                <div class="col-sm-2">
+                                    <span class="price ng-binding" >
+                                        <ins class="product_price_ins" style="  font-size: 15px; margin-top: 16px">  {{index.SoLuong}}</ins>
+                                    </span>
+                                </div>
+                                <div class="col-sm-2">   
+                                    <span class="price ng-binding" style="float: right">
+                                        <ins class="product_price_ins" style="  font-size: 15px; margin-top: 16px">{{index.GiaBan * index.SoLuong | currency:""}}&nbsp;₫</ins>
+                                    </span>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div>  
+                    <div class="total-price" style="font-weight: 600;padding: 10px 0; border-bottom: 1px solid #eaeaea">
+                        Thành tiền
+                        <span class="price ng-binding" style="float: right; font-size: 17px;  color: red">{{TongSoTien | currency:""}}&nbsp;₫</span>
+                    </div>
+                    <div class="total-price" style="font-weight: 600;padding: 10px 0; border-bottom: 1px solid #eaeaea">
+                        Phí vận chuyển
+                        <span class="price ng-binding" style="float: right; font-size: 17px;  color: red"> 0 &nbsp;₫</span>
+                    </div>
+                    <div class="total-price" style="font-weight: 600;padding: 10px 0; border-bottom: 1px solid #eaeaea">
+                        Thanh toán
+                        <span class="price ng-binding" style="float: right; font-size: 17px;  color: red">{{TongSoTien | currency:""}}&nbsp;₫</span>
+                    </div>
+                    <BR />
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-l-0 p-r-xxs-0 m-b-10">
+                        <button type="button" id="add-to-cart" ng-click="goToAddCart()">
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                            Tiếp tục mua
+                        </button>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10" style="margin-left: -10px;   ">
+                        <button type="button" id="buy-now" style="width: 102% !important " ng-click="DatHang(UserInfoReq)">
+                            <i class="glyphicon glyphicon-ok"></i>
+                            ĐĂT HÀNG
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br /><br /><br />
