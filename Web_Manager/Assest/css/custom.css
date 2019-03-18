@@ -1,0 +1,29 @@
+﻿/*************** ALL ************/
+
+body {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#left-sidebar span {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#myNavbar {
+    background-color: purple;
+}
+
+.navbar-header a {
+    color: crimson;
+}
+
+.navbar-brand {
+    color: orange !important;
+}
+
+
+#left-sidebar i:first-child {
+    color: purple;
+    text-align: center;
+}
