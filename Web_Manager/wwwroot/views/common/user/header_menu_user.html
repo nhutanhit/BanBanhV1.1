@@ -1,0 +1,278 @@
+﻿
+<section class="top-link clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!--<ul class="nav navbar-nav topmenu-contact pull-left">
+                    <li><i class="fa fa-phone"></i> <span>Hotline: 0907 599 846</span></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right topmenu  hidden-xs hidden-sm">
+                    <li class="order-check"><a href=""><i class="fa fa-pencil-square-o"></i> Kiểm tra đơn hàng</a></li>
+                    <li class="order-cart"><a href=""><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                    <li class="account-login"><a href=""><i class="fa fa-sign-in"></i> Đăng nhập </a></li>
+                    <li class="account-register"><a href=""><i class="fa fa-key"></i> Đăng ký </a></li>
+                </ul>-->
+                <!--Menu Mobile-->
+                <div class="show-mobile hidden-lg hidden-md">
+                    <!--<div class="quick-user">
+                        <div class="quickaccess-toggle">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="inner-toggle">
+                            <ul class="login links">
+                                <li>
+                                    <a href=""><i class="fa fa-sign-in"></i> Đăng ký</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-key"></i> Đăng nhập</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    <div class="quick-access">
+                        <div class="quickaccess-toggle">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="inner-toggle">
+                            <ul class="links">
+                                <li><a id="mobile-wishlist-total" href=" " class="wishlist"><i class="fa fa-pencil-square-o"></i> Kiểm tra đơn hàng</a></li>
+                                <li><a href="" ng-click="gotoCart()" class="shoppingcart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<header id="header" class="header_fixed">
+    <div id="header_main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-8">
+                    <!--logo-->
+                    <h1 class="pull-left">
+                        <a href="" class="logo">
+                            <img src="../../../../images/logo/thegioididong.jpg" />
+                            <!--<img src="../../../../images/logo/logo_user.png" />-->
+                        </a>
+                    </h1>
+                    <!-- end logo -->
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs">
+                 
+                    <!--<div class="search_box">
+                        <div class="search_wrapper">
+                            <input type="text" name="search" ng-model="search" class="index_input_search" id="txtsearch" onblur="if(this.value==&#39;&#39;)this.value=&#39;Nhập từ khóa tìm kiếm...&#39;" onfocus="if(this.value==&#39;Nhập từ khóa tìm kiếm...&#39;)this.value=&#39;&#39;" value="Nhập từ khóa tìm kiếm...">
+                            <button class="btn_search_submit btn " type="button" id="btnsearch" ng-click="TimKiem(search)"><span>Tìm ngay</span></button>
+                        </div>
+                    </div>-->
+                    
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <!-- Cart -->
+                    <!--<div class="cart_header">
+                        <a href=" " title="Giỏ hàng">
+                            <span class="cart_header_icon"></span>
+                            <span class="box_text" >
+                                <strong class="cart_header_count" >Giỏ hàng <span>{{CountProduct}}</span></strong>
+                                <span class="cart_price" ng-click="gotoCart()">{{CountPrice}}</span>
+                            </span>
+                        </a>
+                        <div class="cart_clone_box">
+                            <div class="cart_box_wrap hidden">
+                                <div class="cart_item original clearfix">
+                                    <div class="cart_item_image"></div>
+                                    <div class="cart_item_info">
+                                        <p class="cart_item_title"><a href=" " title=""></a></p>
+                                        <span class="cart_item_quantity"></span>
+                                        <span class="cart_item_price"></span>
+                                        <span class="remove"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_header_top_box" ng-show="Message">
+                            <div class="cart_empty" >Giỏ hàng của bạn vẫn chưa có sản phẩm nào.</div>
+                        </div>
+                    </div>-->
+                    <div class="user_login">
+                        <div class="user_login_icon">
+                            <img src="../../../../images/logo/account_user_mobile.png" />
+                        </div>
+                        <div class="box_text">
+                            <strong>Giỏ Hàng</strong>
+                            <!--<span class="cart_price">Đăng nhập, đăng ký</span>-->
+                        </div>
+                        <div class="user_box">
+                            <ul ng-show="!ShowListCart">
+                                <li class="cart_empty">Giỏ hàng của bạn vẫn chưa có sản phẩm nào.</li> 
+                            </ul>
+                            <ul ng-show="ShowListCart" >
+                                <li ng-repeat="index in myCartProduct">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-10">
+                                                <img ng-src="{{index.HinhAnh }}" style="width: 47%;  margin-left: -76px " />
+                                            </div>
+                                            <div class="col-sm-2">
+                                                {{index.SoLuong}}
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--<img ng-src="{{'../../../../images/product/'+index.HinhAnh }}" style="width: 20%; " />
+                                    {{index.SoLuong}}-->
+                                </li> 
+                                <li><a href="" ng-click="gotoCart()">Giỏ Hàng</a></li>
+                                <li><a href="" ng-click="gotoCheckOderCart()">Kiểm tra đơn hàng</a></li>
+                            </ul>
+                        </div>
+                        <!--<div class="cart_header_top_box">
+                            <div class="cart_empty">Giỏ hàng của bạn vẫn chưa có sản phẩm nào.</div>
+                        </div>-->
+                    </div>
+                    <!-- End Cart -->
+                    <!-- Account -->
+                    <div class="user_login">
+                        <div class="user_login_icon">
+                            <img src="../../../../images/logo/account_user_mobile.png" />
+                        </div>
+                        <div class="box_text">
+                            <strong  >Tài Khoản</strong>  
+                        </div>  
+                        <div class="user_box">
+                            <ul>
+                                <li ng-show="!ShowAccountUserInfo" ><a href="" ng-click="UserLogin()">Đăng nhập/Đăng ký</a></li>
+                                <li ng-show="ShowAccountUserInfo" ><a href="">{{accountUserInfo}}</a></li> 
+                                <li ng-show="ShowAccountUserInfo" ng-click="logout()" ><a href="">Đăng xuất</a></li> 
+                            </ul>
+                        </div>
+                          
+                    </div>
+                    <!-- End account -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header_mobile">
+        <div class="container">
+            <div class="row">
+                <!-- Menu mobile -->
+                <button type="button" class="navbar-toggle collapsed" id="trigger_click_mobile">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div id="mobile_wrap_menu" class="visible-xs visible-sm">
+                    <div class="user_mobile">
+                        <div class="icon_user_mobile">
+                            <img src="../../../../images/logo/account_user_mobile.png" alt="account">
+                        </div>
+                        <div class="login_mobile">
+                            <a href="" class="login-btn" ng-click="UserLogin()" ng-show="!ShowAccountUserInfo">Đăng nhập/Đăng ký </a>
+                            <a href="" class="login-btn" ng-click="UserLogin()" ng-show="ShowAccountUserInfo">{{accountUserInfo}}</a>
+                            <a href="" class="login-btn" ng-click="gotoAdminLogin()"> / Admin - Login</a>
+                        </div>
+                        <div class="close_menu"></div>
+                    </div>
+                    <div class="content_menu">
+                        <ul>
+                            <li class="level0"><a class="" href=" "><span>Trang chủ</span></a></li>
+                            <li class="level0"><a class="" href=" "><span>Giới thiệu</span></a></li>
+                            <li class="level0"><a class="" href=" "><span>Sản phẩm</span></a></li>
+                            <li class="level0"><a class="" href=" "><span>Tin tức</span></a></li>
+                            <li class="level0"><a class="" href=" "><span>Liên hệ</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End menu mobile -->
+                <div class="pull-right mobile-menu-icon-wrapper">
+                    <!-- Logo mobile -->
+                    <div class="logo logo-mobile">
+                        <a href=" ">
+                            <img src="../../../../images/logo/logo.png" />
+                        </a>
+                    </div>
+                    <!-- End Logo mobile -->
+                    <!-- Cart mobile -->
+                    <div class="cart_header" id="cart-target">
+                        <a href=" " title="Giỏ hàng">
+                            <div class="cart_header_icon"></div>
+                            <div class="box_text">
+                                <strong class="cart_header_count"><span>0</span></strong>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Cart mobile -->
+                </div>
+                <div class="clearfix"></div>
+                <!-- Search mobile -->
+                <!--<div class="search_mobile col-md-12">
+                    <div class="search_box">
+                        <div class="search_wrapper">
+                            <input type="text" name="search" class="index_input_search" id="txtsearch2" onblur="if(this.value==&#39;&#39;)this.value=&#39;Nhập từ khóa tìm kiếm...&#39;" onfocus="if(this.value==&#39;Nhập từ khóa tìm kiếm...&#39;)this.value=&#39;&#39;" value="Nhập từ khóa tìm kiếm...">
+                            <button class="btn_search_submit btn " type="button" id="btnsearch2"><span><i class="fa fa-search"></i></span></button>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- End search mobile -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Start: Main menu -->
+<nav class="navbar-main">
+    <div id="mb_mainnav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12 vertical_menu">
+                    <div id="mb_verticle_menu" class="menu-quick-select">
+                        <div class="title_block">
+                            <span>Danh mục sản phẩm</span>
+                        </div>
+                        <!--<div id="menuverti" class="block_content navbar_menuvertical">
+                            <ul class="nav_verticalmenu">
+                                <li class="has-child level0">
+                                    <a class="" href=" "><img class="icon-menu" src="../../../../images/icon/s1.png" alt="Nghao - Sò - Ốc"> <span>Nghao - Sò - Ốc</span></a><ul class="level1">
+                                        <li class="level1"><a class="" href=" "><span>Ngao</span></a></li>
+                                        <li class="level1"><a class="" href=" "><span>Sò</span></a></li>
+                                        <li class="level1"><a class="" href=" "><span>Ốc</span></a></li>
+                                        <li class="level1"><a class="" href=" "><span>Hàu</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="level0"><a class="" href=" "><img class="icon-menu" src="../../../../images/icon/s2.png" alt="Bào ngư"> <span>Bào ngư</span></a></li>
+                                <li class="level0"><a class="" href=" "><img class="icon-menu" src="../../../../images/icon/s3.png" alt="Tôm"> <span>Tôm</span></a></li>
+                                <li class="level0"><a class="" href=" "><img class="icon-menu" src="../../../../images/icon/s4.png" alt="Mực"> <span>Mực</span></a></li>
+                                <li class="has-child level0">
+                                    <a class="" href=" "><img class="icon-menu" src="../../../../images/icon/s5.png" alt="Cá"> <span>Cá</span></a><ul class="level1">
+                                        <li class="level1"><a class="" href=" "><span>Cá ngừ đại dương</span></a></li>
+                                        <li class="level1"><a class="" href=" "><span>Cá hồi</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-child level0">
+                                    <a class="" href=" "><img class="icon-menu" src="./SeaFood Store_files../../../../images/icons6.png" alt="Cua nghẹ"> <span>Cua nghẹ</span></a><ul class="level1">
+                                        <li class="level1"><a class="" href=" "><span>Cua</span></a></li>
+                                        <li class="level1"><a class="" href=" "><span>Nghẹ</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+                <nav class="col-md-9 col-sm-12 col-xs-12 p-l-0">
+                    <ul class="menu nav navbar-nav menu_hori">
+                        <li class="level0"><a class="" href=" "><span>Trang chủ</span></a></li>
+                        <li class="level0"><a class="" href=" "><span>Giới thiệu</span></a></li>
+                        <li class="level0"><a class="" href=" "><span>Sản phẩm</span></a></li>
+                        <li class="level0"><a class="" href=" "><span>Tin tức</span></a></li>
+                        <li class="level0"><a class="" href=" "><span>Liên hệ</span></a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- End:  danh mục sản phẩm -->
