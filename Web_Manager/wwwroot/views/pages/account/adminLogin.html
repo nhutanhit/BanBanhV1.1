@@ -1,0 +1,57 @@
+﻿ 
+ 
+<div style="background-color: #666666;">
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-more" style="background-image: url('images/login/logo.jpg');" />
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43">
+                        Đăng nhập
+                    </span>
+
+                    <label class="custom-label" translate="UserName"></label>
+                    <div class="wrap-input100">
+                        <input  class="input100" type="text" ng-model="AccountName"  maxlength="20", min="6">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <label class="custom-label" translate="PassWord"></label>
+                    <div class="wrap-input100">
+                        <input   class="input100" type="password" ng-model="Password"  maxlength="20", min="6">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="flex-sb-m w-full p-t-3 p-b-32">
+                        <div class="contact100-form-checkbox">
+
+                        </div>
+
+                        <!--<div>
+                            <a href="#" class="txt1">
+                                Quên mật khẩu?
+                            </a>
+                        </div>-->
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <!--<button class="login100-form-btn-signup" >
+                            Đăng Ký
+                        </button>-->
+
+                        <button class="login100-form-btn-signin" ng-click="login()" translate="Login">
+                          
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+    <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+    <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+</div>
