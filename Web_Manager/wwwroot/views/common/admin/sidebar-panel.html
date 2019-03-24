@@ -1,0 +1,57 @@
+﻿<nav class="main-nav">
+    <ul class="main-menu">
+        <li>
+            <a class="js-sub-menu-toggle" href="/#!/Main/Quan-Ly-Don-Hang" ng-click="gotoOrderManager()">
+                <i class="fa fa-clipboard fa-fw"> </i>
+                <span class="text">Quản Lý Đơn Hàng </span>
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
+            </a>
+            <!--<ul class="sub-menu">
+                <li><a href="" ng-click="gotoTable()"><span class="text">Table demo</span></a></li>
+                <li><a href="" ng-click="goToTable2()"><span class="text">Table 2 Example </span></a></li>
+                <li><a href="" ng-click="gotoTab()"><span class="text">Tab demo</span></a></li>
+                <li><a href="" ng-click="gotoTab2()"><span class="text">Tab2 demo</span></a></li>
+                <li><a href="" ng-click="gotoTimeline()"><span class="text">Time line</span></a></li>
+
+            </ul>-->
+        </li>
+        <li>
+            <a class="js-sub-menu-toggle" href="/#!/Main/Quan-Ly-San-Pham" ng-click="gotoProductManager()">
+                <i class="fa fa-clipboard fa-fw"></i><span class="text">Quản Lý Sản Phẩm</span>
+                <i class="toggle-icon fa fa-angle-left"></i>
+            </a>
+            <!--<ul class="sub-menu ">
+                <li><a href="" ng-click="gotoBacKup()"><span class="text">Demo Backup Data</span></a></li>
+            </ul>-->
+
+        </li>
+
+
+        <li><a><i class="fa fa-envelope-o"></i><span class="text">Inbox <span class="badge red-bg">32</span></span></a></li>
+        <li>
+            <a class="js-sub-menu-toggle" href="">
+                <i class="fa fa-file"></i><span class="text">File Manager</span>
+                <i class="toggle-icon fa fa-angle-left"></i>
+            </a>
+            <ul class="sub-menu ">
+                <li><a><span class="text">Default</span></a></li>
+                <li><a><span class="text">Transparent</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="js-sub-menu-toggle" href="">
+                <i class="fa fa-user"></i>
+                <span class="text">Xin chào: {{username}}</span>
+                <i class="toggle-icon fa fa-angle-left"></i>
+            </a>
+            <ul class="sub-menu">
+                <li class="">
+                    <a class="js-sub-menu-toggle" href="">
+                        <span class="text" ng-click="open('sm')">Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- /main-nav -->
