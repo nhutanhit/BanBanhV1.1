@@ -1,0 +1,209 @@
+﻿
+<style>
+    /*****Style for table*****/
+    #scrollable-area {
+        margin: auto;
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        border: 2px solid #ccc;
+        overflow-y: scroll; /* <-- here is what is important*/
+    }
+
+    /* table styles */
+    /*body {
+        font-family: Arial;
+        font-size: 12px;
+    }*/
+
+    thead {
+        background: #efefef;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        margin: 0;
+    }
+
+        table th, table td {
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            cursor: default !important;
+        }
+    /*****Style for table*****/
+
+    /**Button*/
+    /*.login100-form-btn-signin:hover {
+        opacity: 0.8;
+    }*/
+    #add-to-cart:hover {
+        opacity: 0.8;
+    }
+    .container-login100-form-btn {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .login100-form-btn-signin {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0 5px 0 5px;
+        width: 90%;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(255, 182, 0);
+        font-family: Montserrat-Bold;
+        font-size: 12px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        border: 1px solid blanchedalmond;
+    }
+
+    .add-to-cart {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0 5px 0 5px;
+        width: 90%;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(255, 0, 238);
+        font-family: Montserrat-Bold;   
+        font-size: 12px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        border: 1px solid blanchedalmond;
+    }
+  
+
+</style>
+<!--<link href="../../../../Assest/css/style_user.css" rel="stylesheet" />--> 
+<div style="width:100%" class="container">
+    <!--điều kiện tìm kiếm.-->
+    <div class="panel panel-default" style="border-radius: 12px 12px; margin-bottom: 71px;">
+        <!--ng-controller="langugeCtrl"-->
+        <div class="panel-heading">
+            {{'SearchRequest'|translate}}
+        </div>
+        <div class="panel-body">
+            <div class="widget">
+                <div class="row" style="margin:10px">
+                    <div class="col-sm-12">
+                        <div class="col-sm-4">
+                            <label>Mã Sản Phẩm</label> <label style="color: red"> (*) </label>
+                            <input type="text"   ng-model="searchModel.MaDonHang" class="form-control" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Trạng thái</label>  <label style="color: red"> (*) </label>
+                            <select ng-init="searchModel.Value = listStatus[0].Value"
+                                    ng-model="searchModel.Value" class="form-control">
+                                <option value="">{{'PleaseChoose' | translate }}</option>
+                                <option ng-repeat="list in listStatus" ng-value="{{list.Value}}">{{list.Name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label></label>
+                            <div class="row">
+                                <div class="container-login100-form-btn" style="float: right">
+                                    <button class="login100-form-btn-signin ng-scope" ng-click="search(searchModel)" translate="Search" disabled ="true" >
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Kết quả tìm kiếm.-->
+    <div class="panel panel-default" style="border-radius: 12px 12px; margin-bottom: 71px; margin-top: -54px">
+        <!--ng-controller="langugeCtrl"-->
+        <div class="panel-heading"> 
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-6  col-xxs-12 p-r-0 p-l-xxs-0 m-b-10">
+                    Tổng cộng:      <span class="badge red-bg">{{CountOrderProduct}}</span>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-xs-4 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10" style="float: right">
+                    <div class="container-login100-form-btn" style="float: right">
+                        <button class="add-to-cart" ng-click="gotoAddNewProduct()">
+                            <i class="glyphicon glyphicon-ok"></i>
+                            Thêm sản phẩm mới
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="widget">
+                <div id="scrollable-area">
+                    <table ng-table="tableParams" class="table table-bordered" role="none" show-filter="true" fixed-table-headers="scrollable-area">
+                        <tr ng-repeat="order in $data " role="none">
+                            <td data-title="'STT'" style="width:2%" role="none" align="center">
+                                {{$index+1}}
+                            </td>
+                            <td data-title="'Mã Sản Phẩm'" style="width:10%" role="none" align="left" filter="{MaSanPham: 'text'}">
+                                <a href="javascript:void(0)" style="color: blue;" data-ng-click="adminshowdetailproduct(order.MaDonHang)">{{order.MaSanPham}}</a>
+                            </td>
+                            <td data-title="'Tên Sản Phẩm'" style="width:15%" align="left" filter="{TenSanPham: 'text'}">
+                                {{order.TenSanPham}}
+                            </td>
+                            <td data-title="'Gía Bán'" style="width:10%" align="center" filter="{GiaBan: 'text'}">
+                                <ins class="">{{order.GiaBan | currency:""}}₫</ins>
+                            </td>
+                            <!--<td data-title="'Trạng Thái'" style="width:14%" align="center">
+                                <span class="badge red-bg">{{order.TinhTrangDonHang}}</span>
+                            </td>-->    
+                            <td data-title="'Hình Ảnh'" style="width:10%" align="center">
+                                <img ng-src="{{order.HinhAnh }}" style="width: 70%;" />
+                            </td>
+                            <td data-title="'Ngày Nhập'" style="width:10%" align="center">
+                                {{order.NgayNhapHang | date: 'dd/MM/yyyy HH:mm:ss'}}
+                            </td>
+                            <td   style="width:10%" align="center">
+                                <button class="btn btn-primary" style="width:80%" data-ng-click="adminshowdetailproduct(order.MaSanPham)" translate="Xem Chi Tiết"></button> 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+    <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+    <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+</div>
