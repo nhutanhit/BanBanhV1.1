@@ -1771,22 +1771,13 @@
     <Content Include="wwwroot\views\common\user\footer.html" />
     <Content Include="wwwroot\views\common\user\header_menu_user.html" />
     <Content Include="wwwroot\views\common\user\left-blog.html" />
-<<<<<<< HEAD
- 
-    <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
-    <Content Include="wwwroot\views\common\user\slide_user.html" />
-    <Content Include="wwwroot\views\pages\account\adminLogin.html" />
- 
-=======
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
     <Content Include="wwwroot\views\common\user\userDetailProduct.html" />
     <Content Include="wwwroot\views\pages\account\adminLogin.html" />
->>>>>>> webbanbanh
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
- 
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1813,11 +1804,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="wwwroot\vendor\" />
     <Folder Include="wwwroot\views\common\admin\" />
- 
- 
-    <Folder Include="wwwroot\views\pages\account\" />
- 
- 
     <Folder Include="wwwroot\views\pages\main\" />
   </ItemGroup>
   <ItemGroup>
