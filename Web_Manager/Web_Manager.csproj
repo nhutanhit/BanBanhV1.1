@@ -193,6 +193,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Api\AdminAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1767,6 +1768,11 @@
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="wwwroot\views\common\user\footer.html" />
+    <Content Include="wwwroot\views\common\user\left-blog.html" />
+    <Content Include="wwwroot\views\common\user\listProduct_1.html" />
+    <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
+    <Content Include="wwwroot\views\common\user\slide_user.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1791,10 +1797,8 @@
   <ItemGroup>
     <Folder Include="Api_FB_Manager\Services_Manager\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Api\" />
     <Folder Include="wwwroot\vendor\" />
     <Folder Include="wwwroot\views\common\admin\" />
-    <Folder Include="wwwroot\views\common\user\" />
     <Folder Include="wwwroot\views\pages\account\" />
     <Folder Include="wwwroot\views\pages\main\" />
   </ItemGroup>
