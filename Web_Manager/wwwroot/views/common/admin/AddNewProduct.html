@@ -1,0 +1,280 @@
+﻿
+<style>
+
+
+
+    .danger {
+        font-weight: bold;
+        /*//padding: 20px;*/
+        color: red;
+    }
+
+    /* vi.ly - button delete */
+    div.show-image {
+        position: relative;
+        /* float: left;  */
+        margin: 5px;
+    }
+
+        div.show-image:hover img {
+            opacity: 0.5;
+        }
+
+        div.show-image:hover input.delete {
+            display: block;
+        }
+
+        div.show-image input.delete {
+            position: absolute;
+            display: none;
+        }
+
+        div.show-image input.update {
+            top: 0;
+            left: 0;
+        }
+
+        div.show-image input.delete {
+            top: 0;
+            left: 60%;
+        }
+
+    #imgremove {
+        position: absolute;
+        margin-left: -35px;
+        margin-top: 5px;
+    }
+</style>
+
+<style>
+    /*****Style for table*****/
+    #scrollable-area {
+        margin: auto;
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        border: 2px solid #ccc;
+        overflow-y: scroll; /* <-- here is what is important*/
+    }
+
+    /* table styles */
+    /*body {
+        font-family: Arial;
+        font-size: 12px;
+    }*/
+
+    thead {
+        background: #efefef;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        margin: 0;
+    }
+
+        table th, table td {
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            cursor: default !important;
+        }
+    /*****Style for table*****/
+    .login100-form-btn-signin:hover {
+        opacity: 0.8;
+    }
+
+    .login100-form-btn-signin2:hover {
+        opacity: 0.8;
+    }
+
+
+    .login100-form-btn-signin {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0 5px 0 5px;
+        width: 90%;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(255, 182, 0);
+        font-family: Montserrat-Bold;
+        font-size: 12px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        border: 1px solid blanchedalmond;
+    }
+
+    .login100-form-btn-signin2 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0 5px 0 5px;
+        width: 90%;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(255, 0, 215);
+        font-family: Montserrat-Bold;
+        font-size: 12px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        border: 1px solid blanchedalmond;
+    }
+</style>
+ 
+
+ 
+
+<script src="../../../../Scripts/TextAngular/textAngular-rangy.min.js"></script>
+<script src="../../../../Scripts/TextAngular/textAngular-sanitize.js"></script>
+<script src="../../../../Scripts/TextAngular/textAngular.min.js"></script>
+
+<div style="width:100%" class="container">
+    <!--điều kiện tìm kiếm.-->
+    <div class="panel panel-default" style="border-radius: 12px 12px;   ">
+        <!--ng-controller="langugeCtrl"-->
+        <div class="panel-heading">
+            Thêm mới sản phẩm
+        </div>
+        <div class="panel-body">
+            <div class="widget">
+                <!--xap xem lai-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-9">
+                            <div class="row" style="margin:10px">
+                                <!--hàng 1-->
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <label>Tên Sản Phẩm</label> <label style="color: red"> (*) </label> <br />
+                                        <input type="text" style="height: 34px !important ; max-width: 100%;width: 100%" ng-model="reqModel.TenSanPham" class="form-control" placeholder="Tên sản phẩm" />
+                                        <span ng-show="reqModel.TenSanPham ==='' || reqModel.TenSanPham === null &&  isCheckName " style="color: orangered">Vui lòng nhập!</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Thương Hiệu</label>  <label style="color: red"> (*) </label>
+                                        <select ng-model="reqModel.MaThuongHieu" class="form-control">
+                                            <!-- ng-init="reqModel.MaThuongHieu = listThuongHieu[0].MaThuongHieu"-->
+                                            <option value="">{{'PleaseChoose' | translate }}</option>
+                                            <option ng-repeat="list in listThuongHieu" ng-value="{{list.MaThuongHieu}}">{{list.Name}}</option>
+                                        </select>
+                                        <span ng-show="reqModel.MaThuongHieu ==='' || reqModel.MaThuongHieu === null &&  isCheckMaThuongHieu " style="color: orangered">Vui lòng chọn! </span>
+                                    </div>
+                                </div>
+                            </div>  <!--end-->
+                            <div class="row" style="margin:10px">
+                                <!--hàng 1-->
+                                <div class="col-sm-12">
+                                    <div class="col-sm-3">
+                                        <label>Số lượng</label>  <label style="color: red"> (*) </label>
+                                        <input type="number" numbers-phone-only maxlength=11 ng-model="reqModel.SoLuongTon" class="form-control" placeholder="Số lượng" min="1" />
+                                        <span ng-show="reqModel.SoLuongTon ==='' || reqModel.SoLuongTon === null &&  isCheckSoLuongTon " style="color: orangered">Vui lòng nhập! </span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Trạng Thái</label>
+                                        <select ng-init="reqModel.TrangThai = listStatus[0].TrangThai"
+                                                ng-model="reqModel.TrangThai" class="form-control">
+                                            <option ng-repeat="list in listStatus" ng-value="{{list.TrangThai}}">{{list.Name}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Gía Bán</label>  <label style="color: red"> (*) </label>
+                                        <input type="text" numbers-phone-only maxlength=11 ng-model="reqModel.GiaBan" class="form-control" placeholder="Gía bán" />
+                                        <span ng-show="reqModel.GiaBan ==='' || reqModel.GiaBan === null &&  isCheckGiaBan " style="color: orangered">Vui lòng nhập!</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Gía Thị Trường</label>
+                                        <input type="text" numbers-phone-only ng-model="reqModel.GiaThiTruong" class="form-control" placeholder="Gía thị trường" />
+                                    </div>
+                                </div>
+                            </div>  <!--end-->
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Hình Ảnh</label>  <label style="color: red"> (*) </label>
+                            <span ng-show="ImageModel.CHAN_DUNG.ImageData.compressed.dataURL ==='' || ImageModel.CHAN_DUNG.ImageData.compressed.dataURL === null &&  isCheckimgUrl " style="color: orangered">Vui lòng chọn!</span>
+
+                            <div ng-show="!ImageModel.CHAN_DUNG.ImageData.compressed.dataURL =='' || !ImageModel.CHAN_DUNG.ImageData.compressed.dataURL === null  ">
+                                <img ng-src="{{ImageModel.CHAN_DUNG.ImageData.compressed.dataURL}}"
+                                     width="200" height="200" ng-click="OpenImg(ImageModel.CHAN_DUNG.ImageData.compressed.dataURL)" />
+                                <img class="delete" type="button" value="xóa" ng-click="removeImage()" src="../../../../images/icon/close_delete-512.png" id="imgremove" style="width: 30px" />
+
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <button class="login100-form-btn-signin" id="loadFileXml" value="Chọn Hình"
+                                            onclick="document.getElementById('file1').click();" style="margin-top: 5px;" ng-disabled="ShopInfomation.StatusDisable == 7">
+
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                        Chọn Hình
+                                    </button>
+                                    <input style="display:none;" type="file" id="file1" accept="image/*"
+                                           ng-model="ImageModel.CHAN_DUNG.ImageData.compressed.dataURL" image="ImageModel.CHAN_DUNG.ImageData" resize-max-height="600"
+                                           resize-max-width="600" resize-quality="0.7" resize-type="image/jpg" ng-image-compress />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <button class="login100-form-btn-signin2" id="add-to-cart" ng-click="AddProduct(ImageModel.CHAN_DUNG.ImageData.compressed.dataURL)">
+                        <!--<i class="glyphicon glyphicon-ok"></i>-->
+                        <i class="glyphicon glyphicon-plus"></i> 
+                        Thêm sản phẩm
+                    </button>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <label>Mô Tả Sản Phẩm</label> <label style="color: red"> (*) </label>
+        <div text-angular="text-angular" ng-model="reqModel.MoTa" style="height: 100px">
+            <span ng-show=" reqModel.MoTa ==='' || reqModel.MoTa === null &&  isCheckMoTa " style="color: orangered">Vui lòng nhập!</span>
+        </div>
+        <!--<span ng-show=" reqModel.MoTa ==='' || reqModel.MoTa === null &&  isCheckMoTa " style="color: orangered">Vui lòng nhập!</span>
+        <textarea text-angular="text-angular"  ng-model="reqModel.MoTa"></textarea>-->
+    </div>
+</div>
+
+
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+    <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+    <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+</div>
+
+<!--<div class="col-sm-4">
+    <label>Trạng thái</label>  <label style="color: red"> (*) </label>
+    <select ng-init="searchModel.Value = listStatus[0].Value"
+            ng-model="searchModel.Value" class="form-control">
+        <option value="">{{'PleaseChoose' | translate }}</option>
+        <option ng-repeat="list in listStatus" ng-value="{{list.Value}}">{{list.Name}}</option>
+    </select>
+</div>-->
