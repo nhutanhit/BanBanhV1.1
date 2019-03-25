@@ -1,0 +1,105 @@
+﻿<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <label>Trạng thái</label>  <label style="color: red" > (*) </label>
+                <select required
+                        ng-model="listStatus.Value" class="form-control">
+                    <option value="">{{'PleaseChoose' | translate }}</option>
+                    <option ng-repeat="list in listStatus" ng-value="{{list.Value}}">{{list.Name}}</option>
+                </select>
+            </div>
+            <div class="col-sm-6" style="  margin-top: 25px;">
+                <button ng-click="Update(listStatus.Value)" type="button" class="btn btn-primary">  <i class="glyphicon glyphicon-ok"></i>CẬP NHẬT</button>
+            </div>
+        </div>
+    </div>  <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="widget">
+                <div id="scrollable-area">
+                    <table ng-table="tableParams" class="table table-bordered" role="none" show-filter="true" fixed-table-headers="scrollable-area">
+                        <tr ng-repeat="order in $data " role="none">
+                            <td data-title="'STT'" style="width:2%" role="none" align="center">
+                                {{$index + 1}}
+                            </td>
+                            <td data-title="'Tên Sản Phẩm'" style="width:14%" role="none" align="left">
+                                <a href="javascript:void(0)" style="color: blue;">{{order.TenSanPham}}</a>
+                            </td>
+                            <td data-title="'Hình Ảnh'" style="width:20%" align="center">
+                                <img ng-src="{{order.HinhAnh }}" style="width: 70%;" />
+                            </td>
+                            <td data-title="'Số Lượng'" style="width:2%" align="center">
+                                {{order.SoLuong}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="col-sm-12">
+            <div class="col-sm-4"> 
+            </div>
+            <div class="col-sm-4"> 
+            <div class="col-sm-4">
+                <button ng-click="Close()" type="button" class="btn btn-danger">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="modal-footer">
+    <div class="col-sm-12">
+        <div class="col-sm-4">
+            <button ng-click="Close()" type="button" class="btn btn-danger">Đóng</button>
+        </div>
+        <div class="col-sm-4">
+            <button ng-click="Close()" type="button" class="btn btn-danger">Đóng</button>
+        </div>
+        <div class="col-sm-4">
+            <button ng-click="Close()" type="button" class="btn btn-danger">Đóng</button>
+        </div>
+    </div>
+</div>-->
+
+ 
+
+<style>
+    /*****Style for table*****/
+    #scrollable-area {
+        margin: auto;
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        border: 2px solid #ccc;
+        overflow-y: scroll; /* <-- here is what is important*/
+    }
+
+    /* table styles */
+    /*body {
+        font-family: Arial;
+        font-size: 12px;
+    }*/
+
+    thead {
+        background: #efefef;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        margin: 0;
+    }
+
+        table th, table td {
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            cursor: default !important;
+        }
+    /*****Style for table*****/
+</style> 
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+    <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+    <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+</div>
