@@ -1816,11 +1816,11 @@
     <Folder Include="Api_FB_Manager\Services_Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="wwwroot\vendor\" />
-<<<<<<< HEAD
+ 
     <Folder Include="wwwroot\views\pages\main\" />
-=======
+ 
     <Folder Include="wwwroot\views\common\admin\" />
->>>>>>> banbanh2.0
+ 
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
