@@ -1768,9 +1768,13 @@
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="wwwroot\views\common\admin\footer.html" />
+    <Content Include="wwwroot\views\common\admin\header.html" />
+    <Content Include="wwwroot\views\common\admin\sidebar-panel.html" />
     <Content Include="wwwroot\views\common\user\footer.html" />
     <Content Include="wwwroot\views\common\user\header_menu_user.html" />
     <Content Include="wwwroot\views\common\user\left-blog.html" />
+    <Content Include="wwwroot\views\common\user\ListCart.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
     <Content Include="wwwroot\views\common\user\userDetailProduct.html" />
@@ -1778,6 +1782,8 @@
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
+    <Content Include="wwwroot\views\pages\main\admin.html" />
+    <Content Include="wwwroot\views\pages\main\user.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1803,8 +1809,6 @@
     <Folder Include="Api_FB_Manager\Services_Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="wwwroot\vendor\" />
-    <Folder Include="wwwroot\views\common\admin\" />
-    <Folder Include="wwwroot\views\pages\main\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
