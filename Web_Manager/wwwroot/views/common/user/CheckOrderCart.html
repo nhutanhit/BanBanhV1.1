@@ -1,0 +1,128 @@
+﻿<!--<div ng-show="!isLoginShow" class="alert alert-danger" style="margin-top: 10px ; text-align: center">
+    <h3> Vui lòng đăng nhập để thực hiện chức năng này nha !</h3>
+</div>-->
+
+<div class="row"  style="margin-top: 10px ; text-align: center">
+    <!--<div class="col-sm-12">s
+        <div class="payment-step">
+            <h4>Time Line</h4>
+        </div>
+    </div -->
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <style>
+                /*****Style for table*****/
+                #scrollable-area {
+                    margin: auto;
+                    width: 100%;
+                    height: auto;
+                    max-height: 600px;
+                    border: 2px solid #ccc;
+                    overflow-y: scroll; /* <-- here is what is important*/
+                }
+
+                /* table styles */
+                /*body {
+                    font-family: Arial;
+                    font-size: 12px;
+                }*/
+
+                thead {
+                    background: #efefef;
+                }
+
+                table {
+                    width: 100%;
+                    border-spacing: 0;
+                    margin: 0;
+                }
+
+                    table th, table td {
+                        border-left: 1px solid #ccc;
+                        border-top: 1px solid #ccc;
+                        cursor: default !important;
+                    }
+                /*****Style for table*****/
+            </style>
+            <div style="width:100%" class="container">
+                <!--điều kiện tìm kiếm.-->
+                <div class="panel panel-default" style="border-radius: 12px 12px; margin-bottom: 71px;">
+                    <!--ng-controller="langugeCtrl"-->
+                    <div class="panel-heading">
+                       KIỂM TRA ĐƠN HÀNG
+                    </div>
+                    <div class="panel-body">
+                        <div class="widget">
+                            <div class="row" style="margin:10px">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Mã đơn hàng</label> <label style="color: red"> (*) </label>
+                                        <input type="text" numbers-phone-only maxlength=11 ng-model="searchModel.MaDonHang" class="form-control" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10" style="margin-left: -10px;   margin-top: 10px; ">
+                                            <button type="button" id="buy-now" style="width: 102% !important " ng-click="Search(searchModel)">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                KIỂM TRA ĐƠN HÀNG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Kết quả tìm kiếm.-->
+                <div class="panel panel-default" style="border-radius: 12px 12px; margin-bottom: 71px; margin-top: -54px">
+                    <!--ng-controller="langugeCtrl"-->
+                    <div class="panel-heading">
+                       
+                    </div>
+                    <div class="panel-body">
+                        <div class="widget">
+                            <div id="scrollable-area">
+                                <table ng-table="tableParams" class="table table-bordered" role="none" show-filter="true" fixed-table-headers="scrollable-area">
+                                    <tr ng-repeat="order in $data " role="none">
+                                        <td data-title="'STT'" style="width:2%" role="none" align="center">
+                                            {{$index+1}}
+                                        </td>
+                                        <td data-title="'Mã Đơn Hàng'" style="width:14%" role="none" align="left">
+                                            <a href="javascript:void(0)" style="color: blue;" data-ng-click="showDetailOrder(order.MaDonHang)">{{order.MaDonHang}}</a>
+                                        </td>
+                                        <td data-title="'Họ Tên KH'" style="width:14%" align="left">
+                                            {{order.HoTenKH}}
+                                        </td>
+                                        <td data-title="'Điện Thoại'" style="width:14%" align="center">
+                                            {{order.DienThoaiKH}}
+                                        </td>
+                                        <td data-title="'Ngay Đặt Hàng'" style="width:14%" align="center">
+                                            {{order.NgayDat | date: 'dd/MM/yyyy HH:mm:ss'}}
+                                        </td>
+                                        <td data-title="'Ngay Giao Hàng'" style="width:14%" align="center">
+                                            {{order.NgayGiao | date: 'dd/MM/yyyy HH:mm:ss'}}
+                                        </td>
+                                        <td data-title="'Trạng Thái'" style="width:14%" align="center">
+                                            <span class="badge red-bg" style="background-color: #ff5243 !important">{{order.TinhTrangDonHang}}</span>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+                <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+                <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+            </div>
+
+        </div>
+    </div>
+</div> <br /><br /><br />
