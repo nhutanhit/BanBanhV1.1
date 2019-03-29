@@ -17,7 +17,7 @@ namespace Web_Manager.Controllers.Api
         DataAccess db = new DataAccess();
         Object  UserInformation;
 
-        /// <author>anh.tran</author>
+        /// <author>man.nguyen</author>
         /// <summary>
         /// user Login
         /// </summary>
