@@ -56,20 +56,22 @@
                     <div class="panel-body">
                         <div class="widget">
                             <div class="row" style="margin:10px">
-                                <div class="col-sm-12">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label>Mã đơn hàng</label> <label style="color: red"> (*) </label>
-                                        <input type="text" numbers-phone-only maxlength=11 ng-model="searchModel.MaDonHang" class="form-control" />
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10" style="margin-left: -10px;   margin-top: 10px; ">
-                                            <button type="button" id="buy-now" style="width: 102% !important " ng-click="Search(searchModel)">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                KIỂM TRA ĐƠN HÀNG
-                                            </button>
+                                <div class="col-xs-6">
+                                    <div class="row" style="margin: 0 !important">
+                                        <div style="text-align:right">
+                                            <label>Mã đơn hàng</label> <label style="color: red;"> (*) </label>
                                         </div>
+                                    </div>
+                                    <div class="row" style="margin: 0 !important">
+                                        <input type="text" numbers-phone-only maxlength=11 ng-model="searchModel.MaDonHang" class="form-control" style="margin-left:0px !important; float:right;" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10" style="margin-left: -10px;   margin-top: 10px; ">
+                                        <button type="button" id="buy-now" style="width: 102% !important; margin-top:10px ; height:38px" ng-click="Search(searchModel) ">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                            KIỂM TRA ĐƠN HÀNG
+                                        </button>
                                     </div>
                                 </div>
                             </div>
