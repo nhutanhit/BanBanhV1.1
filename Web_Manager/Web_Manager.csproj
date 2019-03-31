@@ -194,6 +194,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Api\AdminAccountController.cs" />
+    <Compile Include="Controllers\Api\AdminDeleteProductController.cs" />
+    <Compile Include="Controllers\Api\AdminProductManagerController.cs" />
+    <Compile Include="Controllers\Api\AdminUpdateStatusController.cs" />
+    <Compile Include="Controllers\Api\GetDataPreferenceController.cs" />
+    <Compile Include="Controllers\Api\GetDetailOrderProductController.cs" />
+    <Compile Include="Controllers\Api\GetOrderController.cs" />
+    <Compile Include="Controllers\Api\SearchOrderProductController.cs" />
+    <Compile Include="Controllers\Api\UserAccountController.cs" />
     <Compile Include="Controllers\Api\CartController.cs" />
     <Compile Include="Controllers\Api\CheckOrderCartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1770,18 +1778,46 @@
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff2" />
+ 
     <Content Include="wwwroot\views\common\admin\AddNewProduct.html" />
+ 
+    <Content Include="wwwroot\views\common\admin\OrderManager.html" />
     <Content Include="wwwroot\views\common\admin\ProductManager.html" />
+    <Content Include="wwwroot\views\common\admin\ShowDetailOrder.html" />
+    <Content Include="wwwroot\views\common\admin\ShowDetailProduct.html" />
+    <Content Include="wwwroot\views\common\user\CheckOrderCart.html" />
+ 
     <Content Include="wwwroot\views\common\user\footer.html" />
     <Content Include="wwwroot\views\common\user\header_menu_user.html" />
     <Content Include="wwwroot\views\common\user\left-blog.html" />
+    <Content Include="wwwroot\views\common\user\ListCart.html" />
+ 
+    <Content Include="wwwroot\views\common\user\listProduct_1.html" />
+ 
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
     <Content Include="wwwroot\views\common\user\userDetailProduct.html" />
     <Content Include="wwwroot\views\pages\account\adminLogin.html" />
+ 
+ 
+ 
+    <Content Include="wwwroot\views\pages\account\userLogin.html" />
+    <Content Include="wwwroot\views\pages\main\user_Cart.html" />
+    <Content Include="wwwroot\views\pages\main\user_CheckOrderCart.html" />
+    <Content Include="wwwroot\views\pages\main\user_Pay_Cart.html" />
+ 
+ 
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
+    <Content Include="wwwroot\views\pages\main\admin.html" />
+    <Content Include="wwwroot\views\pages\main\user.html" />
+  
+ 
+    <Content Include="wwwroot\views\common\user\listProduct_1.html" />
+    <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
+    <Content Include="wwwroot\views\common\user\slide_user.html" />
+ 
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1807,7 +1843,9 @@
     <Folder Include="Api_FB_Manager\Services_Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="wwwroot\vendor\" />
+ 
     <Folder Include="wwwroot\views\pages\main\" />
+ 
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

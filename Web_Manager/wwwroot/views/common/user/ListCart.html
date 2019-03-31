@@ -16,6 +16,7 @@
                         <button type="button" id="buy-now" ng-click="goToAddCart()">
                             <i class="glyphicon glyphicon-ok"></i>
                             ĐI MUA HÀNG THÔI NÀO
+
                         </button>
                     </div>
                 </div>
@@ -77,11 +78,11 @@
                                 <div class="payment-step" ng-show="showUserAccountInfo">
                                     <h4>2.Thông Tin Khách Hàng</h4>
                                     <div style=" margin-left: 19px; padding: 20px">
-                                        <h2 class="product_price_ins">Xin Chào : {{UserInfoReq.HoTenKH}}</h2>
+                                        <h2 class="product_price_ins">Xin Chào : {{UserInfo.HoTenKH}}</h2>
                                         <label style="font-size: 21px; font-weight: 300">
                                             Địa Chỉ :
                                             <p style="font-size: 17px; font-weight: 300">
-                                                {{UserInfoReq.DiaChiGiaoHang}}
+                                                {{UserInfo.DiaChiGiaoHang}}
                                             </p>
                                         </label>
                                     </div>

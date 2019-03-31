@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Project Manager User</title>
+</head>
+<body style="" cz-shortcut-listen="true">
+    <div class="wrapper">
+        <!--Start:  Header -->
+        <div class="header" ng-include="'wwwroot/views/common/user/header_menu_user.html'">
+            <!--include header-->
+        </div>
+        <!-- End header -->
+        <!-- Start:  Slide   -->
+        <!--<div class="slideshow" ng-include="'wwwroot/views/common/user/slide_user.html'">
+           
+        </div>-->
+        <!-- End:  slider -->
+        <!-- Start:  cam ket  -->
+        <div class="adv">
+            <section id="service">
+                <div class="container m-b-30">
+                    <div class="row">
+                        <ul class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a>Home</a></li>
+                            <li class="active">{{Title}}</li>
+                        </ul>
+                        <div ng-include="'wwwroot/views/common/user/Pay_Cart.html'">
+                            <!--Chứa toàn bộ giỏ hàng - Mua hàng sẽ chuyên về trang này-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End:  Cam ket -->
+       
+    </div>
+
+    <!--<div class="footer" ng-include="'wwwroot/views/common/user/footer.html'">
+       
+    </div>-->
+    <a href="javascript:void(0);" class="back-to-top" style="display: block;"><span>Top</span></a>
+
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+        <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+        <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+    </div>
+
+</body>
+</html>
+<link href="../../../../Assest/css/font-awesome.min_user.css" rel="stylesheet" />
+<!-- <link href="../../../../Assest/css/bootstrap.min_user.css" rel="stylesheet" />-->  
+<link href="../../../../Assest/css/style_user.css" rel="stylesheet" />
+<link href="../../../../Assest/css/teamplate_style_user.css" rel="stylesheet" />
+
+<script src="../../../../Assest/js/plugin_user.js"></script>
+<script src="../../../../Assest/js/scripts_user.js"></script>  <!--Hieu ung show sp -->

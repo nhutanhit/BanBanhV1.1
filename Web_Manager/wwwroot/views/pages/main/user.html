@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Project Manager User</title>
+    <!--<link href="../../../../Assest/css/font-awesome.min_user.css" rel="stylesheet" />
+    <link href="../../../../Assest/css/style_user.css" rel="stylesheet" />
+    <link href="../../../../Assest/css/teamplate_style_user.css" rel="stylesheet" />-->
+</head>
+<body style="" cz-shortcut-listen="true" ng-controller="userMainController">
+    <div class="wrapper">
+        <!--Start:  Header -->
+        <div class="header" ng-include="'wwwroot/views/common/user/header_menu_user.html'">
+            <!--include header-->
+        </div>
+        <!-- End header -->
+        <!-- Start:  Slide   -->
+        <div class="slideshow" ng-include="'wwwroot/views/common/user/slide_user.html'">
+            <!--include slide -->
+        </div>
+        <!-- End:  slider --> 
+        <!-- End:  slider -->
+        <!-- Start:  cam ket  -->
+        <div class="adv">
+            <section id="service">
+                <div class="container m-b-30">
+                    <div class="row">
+                        <div id="service_home" class="clearfix">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-xxs-12 text-center m-b-xs-10">
+                                <div class="service_item">
+                                    <div class="icon icon_product">
+                                        <img src="../../../../images/icon/icon_1.png" />
+                                    </div>
+                                    <div class="description_icon">
+                                        <span class="large-text">
+                                            Miễn phí giao hàng
+                                        </span>
+                                        <span class="small-text">
+                                            Cho hóa đơn từ 450,000đ
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-xxs-12 text-center m-b-xs-10">
+                                <div class="service_item">
+                                    <div class="icon icon_product">
+                                        <img src="../../../../images/icon/icon_2.png" />
+                                    </div>
+                                    <div class="description_icon">
+                                        <span class="large-text">
+                                            Giao hàng trong ngày
+                                        </span>
+                                        <span class="small-text">
+                                            Với tất cả đơn hàng
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center m-b-xs-10">
+                                <div class="service_item">
+                                    <div class="icon icon_product">
+                                        <img src="../../../../images/icon/icon_3.png" />
+                                    </div>
+                                    <div class="description_icon">
+                                        <span class="large-text">
+                                            Sản phẩm an toàn
+                                        </span>
+                                        <span class="small-text">
+                                            Cam kết chất lượng
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End:  Cam ket -->
+        <!-- Start:  Main-->
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <!-- Start: blog_left-->
+                    <div class="col-md-3" ng-include="'wwwroot/views/common/user/left-blog.html'">
+                        <!--include left blog -->
+                    </div>
+                    <!-- End: blog_left-->
+                    <!-- Start:  list product  -->
+                    <div class="col-md-9">
+                        <!--include list Product-->
+                        <div ng-include="'wwwroot/views/common/user/listProduct_1.html'">
+                            <ul class="breadcrumb">
+                                <li><i class="fa fa-home"></i><a>Home</a></li>
+                                <li class="active">{{Title}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Edn:  list product  -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End:  Main-->
+    
+
+    <div class="footer" ng-include="'wwwroot/views/common/user/footer.html'">
+        <!--include footer-->
+    </div>
+    <a href="javascript:void(0);" class="back-to-top" style="display: block;"><span>Top</span></a>
+
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+        <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+        <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+    </div>
+
+</body>
+</html>
+<link href="../../../../Assest/css/font-awesome.min_user.css" rel="stylesheet" />
+<link href="../../../../Assest/css/bootstrap.min_user.css" rel="stylesheet" />
+<link href="../../../../Assest/css/style_user.css" rel="stylesheet" />
+<link href="../../../../Assest/css/teamplate_style_user.css" rel="stylesheet" />
+
+<script src="../../../../Assest/js/plugin_user.js"></script>
+<script src="../../../../Assest/js/scripts_user.js"></script>  <!--Hieu ung show sp -->

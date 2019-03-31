@@ -1,0 +1,120 @@
+﻿
+
+
+
+
+<div class="modal-body" id="modal-body">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#home">ĐĂNG NHẬP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu1">ĐĂNG KÝ</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane container active" id="home">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-1">
+                                    
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="usr">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" autofocus ng-model="UserName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Mật khẩu:</label>
+                                    <input type="password" class="form-control" ng-model="PassWord">
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+
+                            </div>
+                        </div>
+                        <button ng-click="UserLogin()" type="button" class="btn btn-warning" style="margin-left: 25%; ">Đăng Nhập</button>
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="menu1">
+                    <div class="row">
+                        <div class="col-sm-1">
+
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label>Họ tên</label >
+                                 <input type="text" class="form-control" autofocus ng-model="HoTenKH">
+                            </div>
+                            <div class="form-group">
+                                <label>Tên đăng nhập</label>
+                                <input type="text" class="form-control" ng-model="TenDangNhap">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu</label>
+                                <input type="password" class="form-control" ng-model="MatKhau">
+                            </div>
+                            <div class="form-group">
+                                <label>Giới tính</label>
+                                Nam: <input type="radio">
+                                Nữ: <input type="radio">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" ng-model="Email">
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <input type="text" class="form-control" ng-model="DiaChiKH">
+                            </div>
+                            <div class="form-group">
+                                <label>Điện thoại</label>
+                                <input type="text" class="form-control" ng-model="DienThoaiKH">
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày sinh</label>
+                                <input type="date" class="form-control" ng-model="NgaySinhKH">
+                            </div>
+                            <!--<div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Remember me
+                                </label>
+                            </div>-->
+
+                        </div> 
+                        <div class="col-sm-1"> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <button type="button" id="buy-now" style="width: 279px;  ">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                    Đăng ký
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <!--   <button class="btn btn-primary" type="button" ng-click="yes()">Đồng ý</button>-->
+    <button ng-click="Close()" type="button" class="btn btn-danger">Đóng</button>
+</div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999" ng-show="isLoading">
+    <div style="position:fixed;background-color:white;opacity:0.6;width:100%;height:100%;z-index:9999"></div>
+    <img style="position:fixed;z-index:9999;top:45%;left:48%" width="100" src="../../../../images/login/loading.gif" />
+</div>
