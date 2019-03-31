@@ -19,9 +19,9 @@
 <div class="modal-body" id="modal-body" style="width: 100%; ">
     <div class="row">
         <div class="col-sm-12">
-            <div class="col-sm-5">
+            <div class="col-sm-5 float-auto">
                 <!--<img ng-src="{{'../../../../images/product/'+DetailProduct.HinhAnh }}" />-->
-                <img ng-src="{{DetailProduct.HinhAnh}}" />
+                <img style="margin:auto;display:block;" ng-src="{{DetailProduct.HinhAnh}}" />
             </div>
             <div class="col-sm-6">
                 <label style="font-size: 21px; font-weight: 300">{{DetailProduct.TenSanPham}}</label>
@@ -32,12 +32,13 @@
                 <ins class="product_price_ins" style="font-size: 11px; font-weight: 300">
                     <strike> {{DetailProduct.GiaThiTruong | currency:""}}&nbsp;₫ </strike>
                 </ins>
+                <label>Mô tả</label>
                 <p style="line-height: 24px;" ng-bind-html="DetailProduct.MoTa"> <!--{{DetailProduct.MoTa}}--> </p>
                 <hr />
                 <div class="clearfix product_quantity m-t-10 m-b-20">
                     <label>Số lượng</label>
                     <button class="button btn_minus b-r-0" ng-click="DownQuantity()">-</button>
-                    <input type="number" name="quantity" ng-model="DetailProduct.SoLuong" class="quantity text-center ng-pristine ng-untouched ng-valid ng-valid-min" min="1" />
+                    <input type="number" style="margin-left:0px !important" name="quantity" ng-model="DetailProduct.SoLuong" class="quantity text-center ng-pristine ng-untouched ng-valid ng-valid-min" min="1" />
                     <button class="button btn_plus b-l-0" ng-click="UpQuantity()">+</button>
                 </div>
             </div>
