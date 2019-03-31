@@ -52,7 +52,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -1778,53 +1780,42 @@
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff2" />
- 
     <Content Include="wwwroot\views\common\admin\AddNewProduct.html" />
- 
     <Content Include="wwwroot\views\common\admin\OrderManager.html" />
     <Content Include="wwwroot\views\common\admin\ProductManager.html" />
     <Content Include="wwwroot\views\common\admin\ShowDetailOrder.html" />
     <Content Include="wwwroot\views\common\admin\ShowDetailProduct.html" />
     <Content Include="wwwroot\views\common\user\CheckOrderCart.html" />
- 
     <Content Include="wwwroot\views\common\user\footer.html" />
     <Content Include="wwwroot\views\common\user\header_menu_user.html" />
     <Content Include="wwwroot\views\common\user\left-blog.html" />
     <Content Include="wwwroot\views\common\user\ListCart.html" />
- 
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
- 
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
     <Content Include="wwwroot\views\common\user\userDetailProduct.html" />
     <Content Include="wwwroot\views\pages\account\adminLogin.html" />
- 
- 
- 
     <Content Include="wwwroot\views\pages\account\userLogin.html" />
     <Content Include="wwwroot\views\pages\main\user_Cart.html" />
     <Content Include="wwwroot\views\pages\main\user_CheckOrderCart.html" />
     <Content Include="wwwroot\views\pages\main\user_Pay_Cart.html" />
- 
- 
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
     <Content Include="wwwroot\views\pages\main\admin.html" />
     <Content Include="wwwroot\views\pages\main\user.html" />
-  
- 
     <Content Include="wwwroot\views\common\user\listProduct_1.html" />
     <Content Include="wwwroot\views\common\user\Pay_Cart.html" />
     <Content Include="wwwroot\views\common\user\slide_user.html" />
- 
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1843,9 +1834,6 @@
     <Folder Include="Api_FB_Manager\Services_Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="wwwroot\vendor\" />
- 
-    <Folder Include="wwwroot\views\pages\main\" />
- 
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1859,6 +1847,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
