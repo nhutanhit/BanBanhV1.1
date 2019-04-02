@@ -1637,6 +1637,7 @@
     <Content Include="images\login\logo.jpg" />
     <Content Include="images\logo\favicon.png" />
     <Content Include="images\logo\logo.png" />
+    <Content Include="images\logo\logobanbanh.jpg" />
     <Content Include="images\logo\logo_user.png" />
     <Content Include="images\logo\logo_user_mobile.png" />
     <Content Include="images\logo\account_user_mobile.png" />
